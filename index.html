@@ -38,8 +38,7 @@
 
         <div class="header-actions">
           <!-- Replace with your actual resume PDF link once you have it -->
-          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Resume</a>
-          <a class="btn btn-primary" href="#contact">Hire / Contact</a>
+          <a class="btn btn-ghost" href="https://drive.google.com/file/d/12jKpGcXIJhUg8IDLCGc-_0NSzye0wRa1/view?usp=drive_link" target="_blank" rel="noopener">Resume</a>
           <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
@@ -80,7 +79,7 @@
             </p>
 
             <div class="hero-ctas">
-              <a class="btn btn-primary" href="#contact">Get in Touch</a>
+              <a class="btn btn-primary" href="#experience">Work Experience</a>
               <a class="btn btn-ghost" href="#projects">View Projects</a>
             </div>
 
@@ -234,7 +233,36 @@
               <div class="timeline-card card">
                 <div class="timeline-top">
                   <div>
-                    <h3 class="timeline-role">Applications & Cloud Intern</h3>
+                    <h3 class="timeline-role">Data Analyst &amp; Research Intern</h3>
+                    <p class="timeline-org">Eco Servants · California, USA</p>
+                  </div>
+                  <span class="timeline-date">Nov 2025 – Present</span>
+                </div>
+
+                <ul class="bullets">
+                  <li>Built and maintained Python data pipelines processing real environmental datasets, applying geospatial logic to map field data and surface location-based metrics to internal dashboards.</li>
+                  <li>QA'd and published verified invasive-plant entries to the open Invasive Plant Field Guide, standardizing taxonomy, attributes, and categories for data consistency.</li>
+                  <li>Supported analytics reporting via Google Analytics and social analytics dashboards using JavaScript/PHP tied to the CSR system.</li>
+                  <li>Integrated GitHub Copilot into daily development workflow while maintaining full code-review discipline for every AI-assisted output.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Python</span>
+                  <span class="tag">Geospatial Data</span>
+                  <span class="tag">Data Pipelines</span>
+                  <span class="tag">Google Analytics</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">PHP</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card card">
+                <div class="timeline-top">
+                  <div>
+                    <h3 class="timeline-role">Applications &amp; Cloud Engineer</h3>
                     <p class="timeline-org">Vesonix TechLabs · Hyderabad, India</p>
                   </div>
                   <span class="timeline-date">Jun 2022 – Jun 2023</span>
@@ -303,10 +331,144 @@
           </div>
 
           <div class="project-grid">
+            <!-- RoboShop Terraform -->
+            <article class="card project">
+              <div class="project-img project-img-dark">
+                <img
+                  src="./roboshop-terraform.png"
+                  alt="RoboShop 10-layer Terraform architecture diagram"
+                  onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';"
+                />
+                <div class="project-img-fallback" aria-hidden="true">
+                  <span class="project-icon">🏗️</span>
+                  <span class="project-img-label">10-Layer Terraform Architecture</span>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-badge">Infrastructure as Code</div>
+                <h3>RoboShop — Full Production Terraform Architecture</h3>
+                <p class="project-desc">
+                  10 independently state-managed Terraform layers with S3 remote backends on AWS. Cross-layer resources
+                  referenced via SSM Parameter Store — zero hardcoded values. Self-bootstrapping Bastion auto-applies
+                  DB and service layers on first boot and triggers Ansible playbook execution per service, achieving
+                  fully hands-free provisioning.
+                </p>
+
+                <ul class="project-bullets">
+                  <li>6 app services deployed via a single <code>for_each</code> loop driving AMI baking, Launch Templates, ASGs with rolling refresh, and ALB rules.</li>
+                  <li>CPU-based target tracking scaling policies for automatic horizontal scaling.</li>
+                  <li>Wildcard ACM cert, TLS 1.3 ALB, and CloudFront distribution with optimized caching for static assets and pass-through for API traffic.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Terraform</span>
+                  <span class="tag">AWS VPC/EC2/ALB/ASG</span>
+                  <span class="tag">CloudFront</span>
+                  <span class="tag">SSM</span>
+                  <span class="tag">Ansible</span>
+                  <span class="tag">Route53</span>
+                  <span class="tag">ACM</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/Terraform-RoboShop-Main.git" target="_blank" rel="noopener">GitHub Repo</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- RoboShop Ansible -->
+            <article class="card project">
+              <div class="project-img project-img-dark">
+                <img
+                  src="./roboshop-ansible.png"
+                  alt="RoboShop Ansible Roles architecture"
+                  onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';"
+                />
+                <div class="project-img-fallback" aria-hidden="true">
+                  <span class="project-icon">⚙️</span>
+                  <span class="project-img-label">Ansible Roles Architecture</span>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-badge">Automation</div>
+                <h3>RoboShop — Ansible Roles Architecture</h3>
+                <p class="project-desc">
+                  Refactored flat per-service playbooks into a full Roles architecture — any service deploys with a
+                  single command using <code>$service_name</code> parameterization. Zero code duplication across 10 roles.
+                  AWS SSM Parameter Store used for secrets (SSH passwords, MySQL root credentials) via the
+                  <code>amazon.aws</code> lookup plugin.
+                </p>
+
+                <ul class="project-bullets">
+                  <li>All systemd unit files and Nginx configs rendered as Jinja2 templates — no static config files.</li>
+                  <li>Single-command service deployment: one parameter, one command, any service.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Ansible</span>
+                  <span class="tag">AWS EC2/Route53</span>
+                  <span class="tag">SSM</span>
+                  <span class="tag">Jinja2</span>
+                  <span class="tag">amazon.aws</span>
+                  <span class="tag">Nginx</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/ansible-roboshop-roles.git" target="_blank" rel="noopener">GitHub Repo</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- RoboShop Shell -->
+            <article class="card project">
+              <div class="project-img project-img-dark">
+                <img
+                  src="./roboshop-shell.png"
+                  alt="RoboShop microservices shell automation"
+                  onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';"
+                />
+                <div class="project-img-fallback" aria-hidden="true">
+                  <span class="project-icon">🖥️</span>
+                  <span class="project-img-label">Shell → Common Library</span>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-badge">Bash / Scripting</div>
+                <h3>RoboShop — Microservices Deployment Automation</h3>
+                <p class="project-desc">
+                  13 modular Bash scripts to provision and deploy a 10-service polyglot e-commerce platform (Node.js, Java/Maven, Python).
+                  Refactored into a <code>common.sh</code> library reducing each service script from ~70 lines to under 10.
+                  EC2 provisioning and Route53 DNS registration automated via AWS CLI.
+                </p>
+
+                <ul class="project-bullets">
+                  <li>Strict error handling: <code>set -euo pipefail</code>, <code>trap ERR</code>, custom <code>VALIDATOR()</code> functions.</li>
+                  <li>Idempotent service and database creation — safe to re-run at any time.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Bash</span>
+                  <span class="tag">AWS EC2/CLI</span>
+                  <span class="tag">Route53</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Java/Maven</span>
+                  <span class="tag">Python</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/shell-common.git" target="_blank" rel="noopener">GitHub Repo</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Cloud Food Delivery -->
             <article class="card project">
               <div class="project-img">
                 <img
-                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="./food-delivery.png"
                   alt="Cloud-based food delivery system"
                 />
               </div>
@@ -332,16 +494,16 @@
                 </div>
 
                 <div class="project-actions">
-                  <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live Demo</a>
-                  <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Code</a>
+                  <a class="btn btn-primary" href="https://uwm-cloudblog.net/general/deployment-of-a-food-delivery-system-using-iaas-and-paas/" target="_blank" rel="noopener">Blog</a>
                 </div>
               </div>
             </article>
 
+            <!-- NLP Sentiment Analysis -->
             <article class="card project">
               <div class="project-img">
                 <img
-                  src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="./nlp-pipeline.png"
                   alt="NLP sentiment analysis pipeline"
                 />
               </div>
@@ -367,46 +529,11 @@
                 </div>
 
                 <div class="project-actions">
-                  <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Publication</a>
-                  <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Code</a>
+                  <a class="btn btn-primary" href="https://link.springer.com/chapter/10.1007/978-3-031-51167-7_77F" target="_blank" rel="noopener">Publication</a>
                 </div>
               </div>
             </article>
 
-            <article class="card project">
-              <div class="project-img">
-                <img
-                  src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="CI/CD and observability automation"
-                />
-              </div>
-
-              <div class="project-body">
-                <h3>CI/CD + Observability Automation</h3>
-                <p class="project-desc">
-                  Automated build–test–deploy using GitHub Actions and AWS CodePipeline/CodeBuild, and added CloudWatch logs/metrics/alarms
-                  to reduce deployment-related downtime and improve runtime visibility.
-                </p>
-
-                <ul class="project-bullets">
-                  <li>Repeatable release workflows and safer deployments.</li>
-                  <li>Instrumentation for faster debugging and detection.</li>
-                </ul>
-
-                <div class="tag-row">
-                  <span class="tag">GitHub Actions</span>
-                  <span class="tag">CodePipeline</span>
-                  <span class="tag">CodeBuild</span>
-                  <span class="tag">CloudWatch</span>
-                  <span class="tag">Linux</span>
-                </div>
-
-                <div class="project-actions">
-                  <a class="btn btn-primary" href="#contact">Discuss</a>
-                  <a class="btn btn-ghost" href="#experience">Related Experience</a>
-                </div>
-              </div>
-            </article>
           </div>
         </div>
       </section>
@@ -416,53 +543,109 @@
         <div class="container">
           <div class="section-head">
             <h2 class="section-title">Skills & Expertise</h2>
-            <p class="section-subtitle">
-              Clean categorization with consistent spacing—designed for quick recruiter scanning.
-            </p>
+            
           </div>
 
           <div class="skill-grid">
             <div class="card skill-card">
               <h3>Backend</h3>
-              <div class="skill" data-level="88"><div class="skill-row"><span>Python</span><span class="pct">88%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="80"><div class="skill-row"><span>Django</span><span class="pct">80%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="75"><div class="skill-row"><span>Flask</span><span class="pct">75%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="78"><div class="skill-row"><span>Java</span><span class="pct">78%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="82"><div class="skill-row"><span>SQL</span><span class="pct">82%</span></div><div class="bar"></div></div>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-expert">Expert</span>
+                  <div class="tier-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Django</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">Flask</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">SQL</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="card skill-card">
               <h3>Cloud & DevOps</h3>
-              <div class="skill" data-level="82"><div class="skill-row"><span>AWS</span><span class="pct">82%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="78"><div class="skill-row"><span>Azure</span><span class="pct">78%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="76"><div class="skill-row"><span>Linux</span><span class="pct">76%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="74"><div class="skill-row"><span>Docker</span><span class="pct">74%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="65"><div class="skill-row"><span>Kubernetes</span><span class="pct">65%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="78"><div class="skill-row"><span>CI/CD</span><span class="pct">78%</span></div><div class="bar"></div></div>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-expert">Expert</span>
+                  <div class="tier-tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">Ansible</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">Azure</span>
+                    <span class="tag">Linux / Bash</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">CI/CD</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-familiar">Familiar</span>
+                  <div class="tier-tags">
+                    <span class="tag">Kubernetes</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="card skill-card">
               <h3>Databases</h3>
-              <div class="skill" data-level="80"><div class="skill-row"><span>MySQL</span><span class="pct">80%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="74"><div class="skill-row"><span>PostgreSQL</span><span class="pct">74%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="60"><div class="skill-row"><span>MongoDB</span><span class="pct">60%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="58"><div class="skill-row"><span>Snowflake</span><span class="pct">58%</span></div><div class="bar"></div></div>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-expert">Expert</span>
+                  <div class="tier-tags">
+                    <span class="tag">MySQL</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Snowflake</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-familiar">Familiar</span>
+                  <div class="tier-tags">
+                    <span class="tag">Redis</span>
+                    <span class="tag">RabbitMQ</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="card skill-card">
               <h3>Data & Research</h3>
-              <div class="skill" data-level="72"><div class="skill-row"><span>Pandas</span><span class="pct">72%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="68"><div class="skill-row"><span>NumPy</span><span class="pct">68%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="70"><div class="skill-row"><span>NLP</span><span class="pct">70%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="65"><div class="skill-row"><span>Power BI</span><span class="pct">65%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="60"><div class="skill-row"><span>Tableau</span><span class="pct">60%</span></div><div class="bar"></div></div>
-              <div class="skill" data-level="72"><div class="skill-row"><span>Excel</span><span class="pct">72%</span></div><div class="bar"></div></div>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Excel</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-familiar">Familiar</span>
+                  <div class="tier-tags">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Tableau</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <p class="muted small footnote">
-            Note: percentages are visual indicators only; adjust them to match your comfort level.
-          </p>
         </div>
       </section>
 
@@ -489,45 +672,9 @@
 
               <div class="contact-info">
                 <div><strong>Location:</strong> Milwaukee, WI (Open to Remote & Relocation)</div>
-                <div><strong>Email:</strong> <a href="mailto:anuragbojja19@gmail.com">anuragbojja19@gmail.com</a></div>
               </div>
 
-              <div class="muted small">
-                If you share a job description, I can tailor the hero + projects wording to match the role closely.
-              </div>
             </div>
-
-            <form class="card card-soft" id="contactForm">
-              <h3>Send Me a Message</h3>
-
-              <div class="form-row">
-                <label for="name">Name</label>
-                <input id="name" name="name" required />
-              </div>
-
-              <div class="form-row">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required />
-              </div>
-
-              <div class="form-row">
-                <label for="subject">Subject</label>
-                <input id="subject" name="subject" required />
-              </div>
-
-              <div class="form-row">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-              </div>
-
-              <button class="btn btn-primary" type="submit">Send Message</button>
-              <p class="form-status" id="formStatus" aria-live="polite"></p>
-
-              <p class="muted small">
-                This form uses a safe mailto fallback. If you want a real backend (Netlify Forms / Formspree / AWS Lambda),
-                tell me your hosting choice and I will update it.
-              </p>
-            </form>
           </div>
         </div>
       </section>
