@@ -1,299 +1,692 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anurag Bojja — Resume</title>
-  <meta name="description" content="Resume of Anurag Bojja — DevSecOps Engineer. View online or download the latest PDF." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📄%3C/text%3E%3C/svg%3E" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Anurag Bojja DevSecOps & Cloud Engineer. Production AWS infrastructure automation, IaC with Terraform & Ansible, secure CI/CD pipelines, and NLP research publication (Springer ICDSAI 2023)."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Anurag Bojja | DevSecOps & Cloud Engineer</title>
+  </head>
 
-  <style>
-    :root {
-      --bg: #0f172a;
-      --bg-soft: #1e293b;
-      --panel: #ffffff;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --accent: #3b82f6;
-      --accent-hover: #2563eb;
-      --border: #334155;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-      --radius: 14px;
-    }
+  <body>
+    <!-- HEADER -->
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Go to home">
+          <!-- <span class="brand-mark" aria-hidden="true"></span> -->
+          <span class="brand-text">Anurag Bojja</span>
+        </a>
 
-    * { box-sizing: border-box; }
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* ===== Header ===== */
-    header {
-      padding: 24px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      border-bottom: 1px solid var(--border);
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand h1 {
-      font-size: 22px;
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .brand p {
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg-soft);
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.15s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      background: #334155;
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      border-color: var(--accent-hover);
-      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-    }
-
-    .btn svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* ===== Main content ===== */
-    main {
-      flex: 1;
-      padding: 32px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .viewer-wrapper {
-      width: 100%;
-      max-width: 1000px;
-      background: var(--panel);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .viewer-toolbar {
-      padding: 12px 18px;
-      background: #f8fafc;
-      border-bottom: 1px solid #e2e8f0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      color: #475569;
-    }
-
-    .file-name {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 500;
-    }
-
-    .file-name svg {
-      width: 18px;
-      height: 18px;
-      color: #ef4444;
-    }
-
-    .pdf-frame {
-      width: 100%;
-      height: 80vh;
-      border: 0;
-      background: #525659;
-    }
-
-    /* Fallback if PDF can't render in browser (e.g. some mobile browsers) */
-    .fallback {
-      display: none;
-      padding: 60px 32px;
-      text-align: center;
-      color: #475569;
-    }
-
-    .fallback h3 {
-      margin: 0 0 8px;
-      color: #0f172a;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      padding: 20px 32px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      border-top: 1px solid var(--border);
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
-    /* ===== Mobile ===== */
-    @media (max-width: 640px) {
-      header { padding: 16px 18px; }
-      main { padding: 16px; }
-      .brand h1 { font-size: 18px; }
-      .btn { padding: 8px 14px; font-size: 13px; }
-      .pdf-frame { height: 70vh; }
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-
-    <header>
-      <div class="brand">
-        <h1>Anurag Bojja</h1>
-        <p>DevSecOps Engineer · Resume</p>
+        <div class="header-actions">
+          <span id="resume-link-desktop"></span>
+          <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
 
-      <div class="actions">
-        <a class="btn" href="AnuragBojja-Resume-DevSecOps.pdf" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-          Open in new tab
-        </a>
-        <a class="btn btn-primary" href="AnuragBojja-Resume-DevSecOps.pdf" download="AnuragBojja-Resume-DevSecOps.pdf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Resume
-        </a>
+      <div class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <span id="resume-link-mobile"></span>
       </div>
     </header>
 
     <main>
-      <div class="viewer-wrapper">
-        <div class="viewer-toolbar">
-          <div class="file-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span>AnuragBojja-Resume-DevSecOps.pdf</span>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="orb orb-a"></span>
+          <span class="orb orb-b"></span>
+          <span class="orb orb-c"></span>
+          <span class="gridlines"></span>
+        </div>
+
+        <div class="container hero-inner">
+          <div class="hero-left">
+            <p class="eyebrow">Hello, I’m</p>
+            <h1 class="hero-title">Anurag Bojja</h1>
+            <h2 class="hero-subtitle">DevSecOps & Cloud Engineer</h2>
+
+            <p class="hero-lead">
+              DevSecOps &amp; Cloud Engineer with 2+ years of experience building, automating, and securing production cloud infrastructure across AWS and Azure. Architected zero-touch, self-healing systems where security is structural  least-privilege access, centralized secrets management, and encryption in transit as baseline standards. Strong hands-on background in container orchestration with Docker and Kubernetes, infrastructure as code with Terraform and Ansible, and multi-cloud deployment strategy. Published researcher, Springer ICDSAI 2023.
+            </p>
+
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#experience">Work Experience</a>
+              <a class="btn btn-ghost" href="#projects">View Projects</a>
+            </div>
+
+            <div class="hero-links" aria-label="Social links">
+              <a href="https://github.com/AnuragBojja" target="_blank" rel="noopener">GitHub</a>
+              <span aria-hidden="true">•</span>
+              <a href="https://www.linkedin.com/in/anurag-bojja-81a405192/" target="_blank" rel="noopener">LinkedIn</a>
+              <span aria-hidden="true">•</span>
+              <a href="mailto:anuragbojja23@gmail.com">Email</a>
+            </div>
+
+            <div class="hero-pills" aria-label="Quick highlights">
+              <span class="pill">Los Angeles, CA</span>
+              <span class="pill">Open to Remote</span>
+              <span class="pill">Open to Relocation</span>
+              <span class="pill">AWS + Azure</span>
+              <span class="pill">Terraform · Ansible · Docker · Kubernetes · Jenkins · GitHub Actions</span>
+              <span class="pill">Springer (ICDSAI 2023)</span>
+            </div>
           </div>
-          <span id="last-updated"></span>
+
+          <div class="hero-right">
+            <div class="hero-profile card card-dark">
+              <div class="profile-top">
+                <div class="avatar">
+                  <!-- Replace this with your photo later -->
+                  <img
+                    src="./profile.jpeg"
+                    alt="Profile photo placeholder"
+                  />
+                </div>
+                <div class="profile-meta">
+                  <div class="profile-name">DevSecOps & Cloud</div>
+                  <div class="profile-small">Infrastructure · Security · Automation</div>
+                </div>
+              </div>
+
+              <div class="profile-cards">
+                <div class="mini">
+                  <div class="mini-title">Core Focus</div>
+                  <div class="mini-text">Infrastructure Automation, Secure CI/CD, IaC</div>
+                </div>
+                <div class="mini">
+                  <div class="mini-title">Cloud Work</div>
+                  <div class="mini-text">AWS production infra · Azure multi-cloud</div>
+                </div>
+                <div class="mini">
+                  <div class="mini-title">Research</div>
+                  <div class="mini-text">NLP sentiment analysis (Springer ICDSAI 2023)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat card card-dark">
+                <div class="stat-k">2+</div>
+                <div class="stat-v">Years Experience</div>
+              </div>
+              <div class="stat card card-dark">
+                <div class="stat-k">Multi-Cloud</div>
+                <div class="stat-v">AWS + Azure</div>
+              </div>
+              <div class="stat card card-dark">
+                <div class="stat-k">Publication</div>
+                <div class="stat-v">Springer ICDSAI 2023</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <iframe
-          class="pdf-frame"
-          src="AnuragBojja-Resume-DevSecOps.pdf#toolbar=1&navpanes=0&view=FitH"
-          title="Anurag Bojja Resume"
-          onerror="document.getElementById('fallback').style.display='block';this.style.display='none';"
-        ></iframe>
+        <a class="scroll-down" href="#about" aria-label="Scroll down">↓</a>
+      </section>
 
-        <div class="fallback" id="fallback">
-          <h3>Your browser can't display the PDF inline.</h3>
-          <p>Use the <strong>Download Resume</strong> button above to view it.</p>
+      <!-- ABOUT -->
+      <section id="about" class="section section-light reveal">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">
+              I focus on reliability, scalability, and clean system design-shipping production-ready backend and cloud solutions.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text card card-soft">
+              <p>
+                I'm a DevSecOps &amp; Cloud Engineer with hands-on experience designing and automating production-grade AWS infrastructure
+                from 10-layer Terraform architectures to fully parameterized Ansible deployment pipelines.
+                Security is embedded into every layer: least-privilege IAM, secrets managed through AWS SSM,
+                network segmentation enforced at the infrastructure level, and encryption in transit as a baseline.
+              </p>
+              <p>
+                I also have research experience in NLP-based sentiment analysis, where I built an end-to-end pipeline for
+                ingesting, preprocessing, vectorizing, and classifying real-world customer reviews published in Springer (ICDSAI 2023).
+              </p>
+              <div class="about-meta">
+                <span><strong>Location:</strong> Los Angeles, CA</span>
+                <span><strong>Email:</strong> <a href="mailto:anuragbojja23@gmail.com">anuragbojja23@gmail.com</a></span>
+              </div>
+              <div class="about-actions">
+                <a class="btn btn-primary" href="#projects">Projects</a>
+                <a class="btn btn-ghost" href="#experience">Experience</a>
+              </div>
+            </div>
+            <div class="about-cards">
+              <div class="card card-soft">
+                <h3>Engineering Philosophy</h3>
+                <p class="muted">
+                  Secure infrastructure is not a feature it is the foundation. Least-privilege access,
+                  secrets management, and encrypted communication are defaults, not afterthoughts.
+                </p>
+              </div>
+              <div class="card card-soft">
+                <h3>How I Work</h3>
+                <p class="muted">
+                  Automate everything repeatable, enforce security at the infrastructure level, instrument early,
+                  and keep environments consistent and reproducible from day one.
+                </p>
+              </div>
+              <div class="card card-soft">
+                <h3>Education</h3>
+                <p class="muted">
+                  M.S. Computer Science University of Wisconsin-Milwaukee (2023-2025)
+                </p>
+                <p class="muted small">
+                  Relevant coursework: Cloud Computing, Cybersecurity, Database Systems, Machine Learning, NLP, Web Application Development.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section section-gray reveal">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-subtitle">
+              DevSecOps engineering, infrastructure automation, CI/CD pipeline design, and security-first cloud deployments.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card card">
+                <div class="timeline-top">
+                  <div>
+                    <h3 class="timeline-role">Data Analyst &amp; Research Intern</h3>
+                    <p class="timeline-org">Eco Servants · California, USA</p>
+                  </div>
+                  <span class="timeline-date">Nov 2025 – Present</span>
+                </div>
+
+                <ul class="bullets">
+                  <li>Analyzed public engagement and audience response data from social media campaigns, paid advertisements, and outreach channels, surfacing performance trends and engagement patterns through reporting dashboards to guide future campaign strategy.</li>
+                  <li>Contributed to backend API development across Python, Java, and PHP services, implementing endpoints and data-processing scripts that connected environmental datasets to internal dashboards and the broader CSR platform.</li>
+                  <li>Integrated GitHub Copilot into the development workflow while maintaining strict code-review discipline, ensuring every AI-assisted output is reviewed, validated, and owned before it ships.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Python</span>
+                  <span class="tag">Java</span>
+                  <span class="tag">PHP</span>
+                  <span class="tag">Data Analytics</span>
+                  <span class="tag">API Development</span>
+                  <span class="tag">GitHub Copilot</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card card">
+                <div class="timeline-top">
+                  <div>
+                    <h3 class="timeline-role">DevOps Engineer</h3>
+                    <p class="timeline-org">Vesonix TechLabs · Hyderabad, India</p>
+                  </div>
+                  <span class="timeline-date">Jun 2022 - Jun 2023</span>
+                </div>
+
+                <ul class="bullets">
+                  <li>Built and maintained Docker images for internal microservices using multi-stage builds and minimal base images, reducing image sizes and streamlining deployments to development environments.</li>
+                  <li>Managed Kubernetes workloads across development and staging clusters configured Deployments, Services, and ConfigMaps, monitored pod health, and resolved container-level failures during release cycles.</li>
+                  <li>Maintained CI/CD pipelines in GitHub Actions, contributing to build and test automation that supported reliable, repeatable releases across the engineering team.</li>
+                  <li>Configured cloud infrastructure for non-production environments on AWS, including IAM policies, security groups, and network segmentation aligned with internal access standards.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Docker</span>
+                  <span class="tag">Kubernetes</span>
+                  <span class="tag">GitHub Actions</span>
+                  <span class="tag">AWS</span>
+                  <span class="tag">IAM</span>
+                  <span class="tag">CI/CD</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card card">
+                <div class="timeline-top">
+                  <div>
+                    <h3 class="timeline-role">Software Developer</h3>
+                    <p class="timeline-org">Adqura Pvt. Ltd. · Hyderabad, India</p>
+                  </div>
+                  <span class="timeline-date">Mar 2022 – May 2022</span>
+                </div>
+
+                <ul class="bullets">
+                  <li>Developed backend API endpoints in Python, implementing request validation, business logic, and database integration to support core application workflows.</li>
+                  <li>Built and maintained automated test suites covering unit and integration scenarios, improving code coverage and catching regressions earlier in the development cycle.</li>
+                  <li>Resolved application defects across development and testing environments through structured log analysis and execution tracing, reducing pre-production failure rates.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Python</span>
+                  <span class="tag">Backend APIs</span>
+                  <span class="tag">Testing</span>
+                  <span class="tag">Debugging</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="note card card-soft">
+            <strong>Research:</strong>
+            <span class="muted">
+              NLP sentiment analysis pipeline with end-to-end workflow patterns (published in Springer ICDSAI 2023).
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section section-light reveal">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Production-grade infrastructure automation, secure cloud deployments, and NLP research.</p>
+          </div>
+
+          <div class="project-grid">
+
+            <!-- Project 1: Production Microservices Infrastructure -->
+            <article class="card project">
+              <div class="project-img project-img-dark">
+                <img
+                  src="./roboshop-terraform.png"
+                  alt="RoboShop 10-layer IaC architecture diagram"
+                  onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';"
+                />
+                <div class="project-img-fallback" aria-hidden="true">
+                  <span class="project-icon">🏗️</span>
+                  <span class="project-img-label">10-Layer IaC Architecture</span>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-badge">Infrastructure as Code</div>
+                <h3>Production Microservices Infrastructure (10-Layer IaC Architecture)</h3>
+                <p class="project-desc">
+                  Architected a fully automated, zero-touch production environment across 10 independently managed infrastructure layers,
+                  where each layer is isolated with its own remote state — eliminating cross-layer dependencies and enabling teams to modify
+                  any layer without risk to the rest of the system.
+                </p>
+
+                <ul class="project-bullets">
+                  <li>Enforced security at the infrastructure level — least-privilege network policies, centralized secrets management with no credentials in code, and TLS encryption at the edge.</li>
+                  <li>Engineered a self-bootstrapping entry point that automatically provisions databases, bakes service images, configures all services, and deploys behind an auto-scaling load-balanced architecture — fully hands-free from first boot to production.</li>
+                  <li>Layered Ansible configuration management on top, where any service deploys through a single parameterized command using Jinja2 templates and runtime secret resolution.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Terraform</span>
+                  <span class="tag">Ansible</span>
+                  <span class="tag">AWS VPC/EC2/ALB/ASG</span>
+                  <span class="tag">CloudFront</span>
+                  <span class="tag">SSM</span>
+                  <span class="tag">Route53</span>
+                  <span class="tag">ACM</span>
+                  <span class="tag">Jinja2</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/Terraform-RoboShop-Main" target="_blank" rel="noopener">Terraform Repo</a>
+                  <a class="btn btn-ghost" href="https://github.com/AnuragBojja/ansible-roboshop-roles" target="_blank" rel="noopener">Ansible Repo</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Containerized Microservices Platform (K8s) -->
+            <article class="card project">
+              <div class="project-img project-img-dark">
+                <img
+                  src="./roboshop-k8s.png"
+                  alt="RoboShop Kubernetes orchestration architecture"
+                  onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';"
+                />
+                <div class="project-img-fallback" aria-hidden="true">
+                  <span class="project-icon">☸️</span>
+                  <span class="project-img-label">Kubernetes Orchestration Platform</span>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-badge">Containers &amp; Orchestration</div>
+                <h3>Containerized Microservices Platform (Kubernetes Orchestration &amp; Helm Packaging)</h3>
+                <p class="project-desc">
+                  Containerized and orchestrated a 10-service polyglot microservices platform end-to-end — from optimized Docker images
+                  through production-grade Kubernetes deployments to reusable Helm charts.
+                </p>
+
+                <ul class="project-bullets">
+                  <li>Built optimized Docker images for all 10 services using multi-stage builds, Alpine base images, and non-root user enforcement — eliminating build-time tooling from runtime containers.</li>
+                  <li>Deployed services to a managed Kubernetes cluster using Deployments for stateless workloads, StatefulSets with persistent storage for databases, ConfigMaps for environment-driven configuration, and HPA for traffic-driven scaling.</li>
+                  <li>Implemented security and reliability controls — RBAC with role and role-binding configurations, IRSA-based pod-to-cloud authentication via OIDC, and liveness/readiness probes with appropriate thresholds per service type.</li>
+                  <li>Packaged the entire deployment as reusable Helm charts with values-driven templating, enabling environment-specific deployments without code duplication.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Docker</span>
+                  <span class="tag">Kubernetes</span>
+                  <span class="tag">Helm</span>
+                  <span class="tag">kubectl</span>
+                  <span class="tag">StatefulSets</span>
+                  <span class="tag">HPA</span>
+                  <span class="tag">RBAC</span>
+                  <span class="tag">IRSA/OIDC</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/docker-compress" target="_blank" rel="noopener">Docker Compress</a>
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/kube-roboshop-vol" target="_blank" rel="noopener">Kube Stateful+HPA</a>
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/k8s-HELM-roboshop" target="_blank" rel="noopener">Helm Charts</a>
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/k8-rbac" target="_blank" rel="noopener">RBAC</a>
+                  <a class="btn btn-primary" href="https://github.com/AnuragBojja/k8-ingress" target="_blank" rel="noopener">Ingress</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: Multi-Cloud Deployment Strategy -->
+            <article class="card project">
+              <div class="project-img project-img-dark">
+                <img
+                  src="./food-delivery.png"
+                  alt="Multi-cloud food delivery system architecture"
+                  onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';"
+                />
+                <div class="project-img-fallback" aria-hidden="true">
+                  <span class="project-icon">☁️</span>
+                  <span class="project-img-label">Multi-Cloud Deployment</span>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-badge">Multi-Cloud</div>
+                <h3>Multi-Cloud Deployment Strategy (IaaS vs PaaS Architecture)</h3>
+                <p class="project-desc">
+                  Deployed the application across AWS (IaaS) and Azure (PaaS) in a multi-cloud architecture, reducing single-provider
+                  dependency and improving disaster recovery posture against regional outages, provider-level service degradations,
+                  and vendor lock-in risks.
+                </p>
+
+                <ul class="project-bullets">
+                  <li>Hardened both deployments through automated CI/CD pipelines, TLS termination, IAM-scoped access controls, and strict network policies — ensuring no database or internal service was exposed to the public internet.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Django</span>
+                  <span class="tag">AWS EC2</span>
+                  <span class="tag">Azure Web App</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">Nginx</span>
+                  <span class="tag">Gunicorn</span>
+                  <span class="tag">GitHub Actions</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://uwm-cloudblog.net/general/deployment-of-a-food-delivery-system-using-iaas-and-paas/" target="_blank" rel="noopener">Blog Post</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 4: NLP Sentiment Analysis -->
+            <article class="card project">
+              <div class="project-img project-img-dark">
+                <img
+                  src="./nlp-pipeline.png"
+                  alt="NLP sentiment analysis pipeline"
+                  onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';"
+                />
+                <div class="project-img-fallback" aria-hidden="true">
+                  <span class="project-icon">📊</span>
+                  <span class="project-img-label">NLP Sentiment Pipeline</span>
+                </div>
+              </div>
+
+              <div class="project-body">
+                <div class="project-badge">Research</div>
+                <h3>NLP Sentiment Analysis Pipeline (Springer ICDSAI 2023)</h3>
+                <p class="project-desc">
+                  End-to-end text classification workflow for customer reviews: preprocessing, TF-IDF vectorization,
+                  and supervised models (Naive Bayes, Logistic Regression, SVM) using scalable cloud deployment patterns.
+                </p>
+
+                <ul class="project-bullets">
+                  <li>Feature engineering with TF-IDF for sentiment polarity.</li>
+                  <li>Production-style pipeline mindset: ingestion → preprocessing → training.</li>
+                </ul>
+
+                <div class="tag-row">
+                  <span class="tag">Python</span>
+                  <span class="tag">NLP</span>
+                  <span class="tag">TF-IDF</span>
+                  <span class="tag">SVM</span>
+                  <span class="tag">AWS</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://link.springer.com/chapter/10.1007/978-3-031-51167-7_77F" target="_blank" rel="noopener">Publication</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section section-gray reveal">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Skills & Expertise</h2>
+            
+          </div>
+
+          <div class="skill-grid">
+            <div class="card skill-card">
+              <h3>Backend</h3>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-expert">Expert</span>
+                  <div class="tier-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Django</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">Flask</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">SQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card skill-card">
+              <h3>Cloud & DevOps</h3>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-expert">Expert</span>
+                  <div class="tier-tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">Ansible</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">Azure</span>
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">AWS CodePipeline</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">Nginx</span>
+                    <span class="tag">Gunicorn</span>
+                    <span class="tag">Bash Scripting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card skill-card">
+              <h3>Databases</h3>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-expert">Expert</span>
+                  <div class="tier-tags">
+                    <span class="tag">MySQL</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Snowflake</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">RabbitMQ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card skill-card">
+              <h3>Containers & Orchestration</h3>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-expert">Applied</span>
+                  <div class="tier-tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">kubectl</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">Multi-stage Builds</span>
+                    <span class="tag">StatefulSets</span>
+                    <span class="tag">HPA</span>
+                    <span class="tag">PV/PVC</span>
+                    <span class="tag">Helm Charts</span>
+                    <span class="tag">RBAC</span>
+                    <span class="tag">IRSA/OIDC</span>
+                    <span class="tag">Ingress</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card skill-card">
+              <h3>Security & Compliance</h3>
+              <div class="skill-tiers">
+                <div class="tier">
+                  <span class="tier-label tier-expert">Applied</span>
+                  <div class="tier-tags">
+                    <span class="tag">IAM Least-Privilege</span>
+                    <span class="tag">SSM Secrets Mgmt</span>
+                    <span class="tag">TLS/SSL</span>
+                  </div>
+                </div>
+                <div class="tier">
+                  <span class="tier-label tier-proficient">Proficient</span>
+                  <div class="tier-tags">
+                    <span class="tag">Network Segmentation</span>
+                    <span class="tag">Security Groups</span>
+                    <span class="tag">Encryption in Transit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section section-light reveal">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">
+              For full-time DevSecOps or Cloud Engineering roles, infrastructure discussions, or questions about my projects and research.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card card-soft contact-card">
+              <h3>Quick Actions</h3>
+              <p class="muted">Fast ways to reach me:</p>
+
+              <div class="contact-actions">
+                <a class="btn btn-primary" href="mailto:anuragbojja23@gmail.com">Email</a>
+                <a class="btn btn-ghost" href="https://www.linkedin.com/in/anurag-bojja-81a405192/" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="btn btn-ghost" href="https://github.com/AnuragBojja" target="_blank" rel="noopener">GitHub</a>
+              </div>
+
+              <div class="contact-info">
+                <div><strong>Location:</strong> Los Angeles, CA (Open to Remote & Relocation)</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <p>
-        Always up to date · Built by Anurag Bojja ·
-        <a href="https://github.com/AnuragBojja" target="_blank" rel="noopener">View on GitHub</a>
-      </p>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <strong>Anurag Bojja</strong>
+          <p class="footer-muted">DevSecOps & Cloud Engineer focused on infrastructure automation, secure CI/CD, and production-grade AWS deployments.</p>
+        </div>
+        <div class="footer-right footer-muted">© 2026 Anurag Bojja. All rights reserved.</div>
+      </div>
     </footer>
-  </div>
 
-  <script>
-    // Show "Last updated" timestamp based on the PDF's Last-Modified header from GitHub Pages
-    (async () => {
-      try {
-        const res = await fetch("AnuragBojja-Resume-DevSecOps.pdf", { method: "HEAD" });
-        const lm = res.headers.get("Last-Modified");
-        if (lm) {
-          const d = new Date(lm);
-          const formatted = d.toLocaleDateString(undefined, {
-            year: "numeric", month: "short", day: "numeric"
-          });
-          document.getElementById("last-updated").textContent = "Updated " + formatted;
-        }
-      } catch (e) { /* silent */ }
-    })();
-
-    // Detect mobile browsers that don't render PDF in iframe and show fallback
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      // Many mobile browsers can't inline-render PDFs. Hint to use the buttons.
-      const fb = document.getElementById("fallback");
-      const frame = document.querySelector(".pdf-frame");
-      // Give it a chance — if no content after 2s, show fallback
-      setTimeout(() => {
-        try {
-          if (!frame.contentDocument && !frame.contentWindow) {
-            fb.style.display = "block";
-          }
-        } catch (e) {
-          fb.style.display = "block";
-        }
-      }, 2000);
-    }
-  </script>
-</body>
+    <script src="./script.js"></script>
+    <script>
+      // DRY: Single source for Resume link
+      const resumeLinkHTML = '<a class="btn btn-ghost" href="https://anuragbojja.github.io/Resume/" target="_blank" rel="noopener">Resume</a>';
+      document.getElementById('resume-link-desktop').innerHTML = resumeLinkHTML;
+      document.getElementById('resume-link-mobile').innerHTML = resumeLinkHTML.replace('btn btn-ghost', '');
+    </script>
+  </body>
 </html>
